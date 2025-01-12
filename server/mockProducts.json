@@ -1,0 +1,46 @@
+[
+    {
+      "id": 1,
+      "title": "אוזניות בלוטוס איכותיות",
+      "description": "אוזניות מעולות עם סינון רעשים אקטיבי",
+      "displayImage": "https://www.semicom.co.il/media/catalog/product/cache/6dccaef2fe7eac24fc80776465908971/6/4/6438409075086_1.webp",
+      "price": 199.99,
+      "vendor": {
+        "fullName": "ישראל ישראלי",
+        "profileImage": "https://img.mako.co.il/2022/03/07/tamarzand_autoOrient_g.jpg"
+      }
+    },
+    {
+      "id": 2,
+      "title": "מטען אלחוטי מהיר",
+      "description": "טעינה מהירה לכל המכשירים התומכים",
+      "displayImage": "https://lunitech.co.il/product/232/2700.jpg",
+      "price": 89.99,
+      "vendor": {
+        "fullName": "שרה כהן",
+        "profileImage": "https://img.mako.co.il/2022/03/07/tamarzand_autoOrient_g.jpg"
+      }
+    },
+    {
+      "id": 3,
+      "title": "מצלמת אבטחה חכמה",
+      "description": "מצלמת אבטחה עם חיבור לאינטרנט וזיהוי תנועה",
+      "displayImage": "https://i0.wp.com/www.cwc.co.il/wp-content/uploads/2024/05/12a53c37-0ca2-431c-ac7d-0dc49e9c6c4b.jpg?fit=600%2C600&ssl=1",
+      "price": 299.99,
+      "vendor": {
+        "fullName": "דוד לוי",
+        "profileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXTi7gOQwu1PI-lpXg-9ZlbN6gJqfNUwRm4w&s"
+      }
+    },
+    {
+      "id": 4,
+      "title": "טלוויזיה חכמה 4K",
+      "description": "טלוויזיה חכמה עם רזולוציית 4K ותמיכה ב-HDR",
+      "displayImage": "https://www.traklin.co.il/images/gallery/16907/55qned86t6a_2_%D7%AA%D7%9E%D7%95%D7%A0%D7%94.jpg",
+      "price": 1999.99,
+      "vendor": {
+        "fullName": "רונית כהן",
+        "profileImage": "https://img.mako.co.il/2022/03/07/yaelpereg_re_autoOrient_g.jpg"
+      }
+    }
+  ]
