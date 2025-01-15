@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://product-pick-server.onrender.com/products';
+const API_URL = 'https://product-pick-server.onrender.com/product';
 
 export const createProduct = async (productData) => {
   try {
