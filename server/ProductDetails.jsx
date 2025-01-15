@@ -83,4 +83,4 @@ const ProductDetails = ({ product }) => {
   );
 };
 
-export default ProductDetails;
+// export default ProductDetails;

@@ -111,7 +111,7 @@ const HomeContent = () => {
       {/* Main Content */}
       <main className="pt-20 pb-24 container mx-auto px-4 max-w-[500px]">
         {/* Selected Category Display */}
-        {(selectedMain || selectedSub) && (
+        {(selectedMain) && (
           <div className="mb-4 flex items-center gap-2 text-sm text-gray-600" dir="rtl">
             {selectedMain && (
               <span>{selectedMain.name}</span>
@@ -178,4 +178,4 @@ const HomePage = () => (
   </CategoryProvider>
 );
 
-export default HomePage;
+// export default HomePage;

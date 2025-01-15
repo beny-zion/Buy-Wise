@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { throttle } from 'lodash';
 import { getAllProducts } from '../../services/api/products';
 import ProductCard from '../../components/home/products/ProductCard';
+import { CategoryProvider, useCategories } from '../../contexts/CategoryContext';
+
 
 const ProductFeed = () => {
     const [products, setProducts] = useState([]);
@@ -14,12 +16,15 @@ const ProductFeed = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
     const [error, setError] = useState(null);
+    
 
     const { id } = useParams();
     const navigate = useNavigate();
     const feedRef = useRef(null);
     const isNavigatingRef = useRef(false);
     const initialLoadDoneRef = useRef(false);
+    const { selectedMain } = useCategories();
+
 
     // טעינת מוצרים ראשונית - רק פעם אחת
     useEffect(() => {
@@ -30,6 +35,7 @@ const ProductFeed = () => {
                 setLoading(true);
                 const response = await getAllProducts({ page: 1, limit: 10 });
                 const newProducts = response.products;
+                console.log(newProducts)
 
                 setProducts(newProducts);
                 setHasMore(newProducts.length === 10);
@@ -53,6 +59,11 @@ const ProductFeed = () => {
         loadInitialProducts();
     }, [id]);
 
+    useEffect(() => {
+        setCurrentPage(1);
+        setProducts([]);
+      }, [selectedMain]);
+
     // טעינת מוצרים נוספים
     const loadMoreProducts = useCallback(async () => {
         if (!hasMore || loadingMore) return;
@@ -60,7 +71,18 @@ const ProductFeed = () => {
         try {
             setLoadingMore(true);
             const nextPage = Math.floor(products.length / 10) + 1;
-            const response = await getAllProducts({ page: nextPage, limit: 10 });
+            const params = new URLSearchParams({
+                      page: nextPage,
+                      limit: '10'
+                    });
+                    
+                    // הוספת קטגוריה רק אם יש קטגוריה נבחרת
+                    if (selectedMain?._id) {
+                      params.append('category', selectedMain._id);
+                    }
+                    
+                    const response = await getAllProducts(params);
+            // const response = await getAllProducts({ page: nextPage, limit: 10 });
             const newProducts = response.products;
             console.log(newProducts);
 
@@ -76,7 +98,7 @@ const ProductFeed = () => {
         } finally {
             setLoadingMore(false);
         }
-    }, [hasMore, loadingMore, products.length]);
+    }, [hasMore, loadingMore, products.length,selectedMain]);
 
     // ניווט בין מוצרים
     const handleNavigation = useCallback(async (dir) => {
@@ -183,4 +205,4 @@ useEffect(() => {
     );
 };
 
-export default ProductFeed;
+// export default ProductFeed;

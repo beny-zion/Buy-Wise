@@ -21,4 +21,4 @@ const SelectedCategories = ({ categories = [] }) => {
     );
   };
   
-  export default SelectedCategories;
+  // export default SelectedCategories;

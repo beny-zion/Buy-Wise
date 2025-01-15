@@ -50,7 +50,7 @@ const RegisterPage = () => {
             />
           )}
 
-          <form className="space-y-6" onSubmit={handleSubmit}>
+      <form className="space-y-6" onSubmit={handleSubmit} dir="rtl">
             <div>
               <label
                 htmlFor="fullName"
@@ -64,8 +64,9 @@ const RegisterPage = () => {
                   name="fullName"
                   type="text"
                   required
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                />
+                  className="mt-2 block w-full px-4 py-2.5 bg-white/50 border border-gray-200 
+                  rounded-xl focus:ring-2 focus:ring-[#FFA066] focus:border-[#FFA066]
+                  placeholder-gray-400 transition-all duration-200"                />
               </div>
             </div>
 
@@ -83,8 +84,9 @@ const RegisterPage = () => {
                   type="email"
                   autoComplete="email"
                   required
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                />
+                  className="mt-2 block w-full px-4 py-2.5 bg-white/50 border border-gray-200 
+                  rounded-xl focus:ring-2 focus:ring-[#FFA066] focus:border-[#FFA066]
+                  placeholder-gray-400 transition-all duration-200"                />
               </div>
             </div>
 
@@ -103,8 +105,9 @@ const RegisterPage = () => {
                   autoComplete="new-password"
                   required
                   minLength={6}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                />
+                  className="mt-2 block w-full px-4 py-2.5 bg-white/50 border border-gray-200 
+                  rounded-xl focus:ring-2 focus:ring-[#FFA066] focus:border-[#FFA066]
+                  placeholder-gray-400 transition-all duration-200"                />
               </div>
             </div>
 
@@ -122,19 +125,24 @@ const RegisterPage = () => {
                   type="file"
                   accept="image/*"
                   ref={fileInputRef}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                />
+                  className="mt-2 block w-full px-4 py-2.5 bg-white/50 border border-gray-200 
+                  rounded-xl focus:ring-2 focus:ring-[#FFA066] focus:border-[#FFA066]
+                  placeholder-gray-400 transition-all duration-200"                />
               </div>
             </div>
 
             <div>
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
-              >
-                {isLoading ? <LoadingSpinner /> : 'הרשם'}
-              </button>
+            <button
+      type="submit"
+      disabled={isLoading}
+      className="w-full flex justify-center py-3 px-6
+               bg-gradient-to-r from-[#FFA066] to-[#FF6B6B]
+               text-white font-medium rounded-xl shadow-md
+               hover:shadow-lg transform hover:-translate-y-0.5
+               transition-all duration-200 disabled:opacity-50"
+    >
+      {isLoading ? <LoadingSpinner /> : 'הרשם'}
+    </button>
             </div>
           </form>
 

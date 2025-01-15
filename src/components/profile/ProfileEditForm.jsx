@@ -37,55 +37,84 @@ const handleSubmit = async (e) => {
  }
 };
 
-  return (
-    <div className="w-full max-w-screen-md mx-auto bg-white rounded-lg shadow mt-4 p-4 md:p-6">
-   <form onSubmit={handleSubmit} className="space-y-4">
-   <ImageUploader 
-     currentImage={user.profileImage}
-     setFormData={setFormData}
-   />
-        
+return (
+  <div className="w-full max-w-screen-md mx-auto bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-6">
+    <form onSubmit={handleSubmit} className="space-y-6" dir="rtl">
+      {/* Image Uploader */}
+      <div className="flex justify-center">
+        <ImageUploader 
+          currentImage={user.profileImage}
+          setFormData={setFormData}
+        />
+      </div>
+      
+      {/* Form Fields */}
+      <div className="space-y-5">
         <div>
-          <label className="block text-sm font-medium mb-1">שם מלא</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">שם מלא</label>
           <input
             type="text"
             value={formData.fullName}
             onChange={(e) => setFormData({...formData, fullName: e.target.value})}
-            className="w-full p-2 border rounded"
-            required
-          />
-        </div>
-        <div>
-          <label className="block text-sm font-medium mb-1">אימייל</label>
-          <input
-            type="text"
-            value={formData.email}
-            onChange={(e) => setFormData({...formData, email: e.target.value})}
-            className="w-full p-2 border rounded"
+            className="w-full px-4 py-2.5 bg-white/50 border border-gray-200 
+                     rounded-xl focus:ring-2 focus:ring-[#FFA066] focus:border-[#FFA066]
+                     placeholder-gray-400 transition-all duration-200"
             required
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-1">...תספר קצת עליך</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">אימייל</label>
+          <input
+            type="email"
+            value={formData.email}
+            onChange={(e) => setFormData({...formData, email: e.target.value})}
+            className="w-full px-4 py-2.5 bg-white/50 border border-gray-200 
+                     rounded-xl focus:ring-2 focus:ring-[#FFA066] focus:border-[#FFA066]
+                     placeholder-gray-400 transition-all duration-200"
+            required
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">ספר לנו קצת על עצמך...</label>
           <textarea
             value={formData.bio}
             onChange={(e) => setFormData({...formData, bio: e.target.value})}
-            className="w-full p-2 border rounded"
+            className="w-full px-4 py-3 bg-white/50 border border-gray-200 
+                     rounded-xl focus:ring-2 focus:ring-[#FFA066] focus:border-[#FFA066]
+                     placeholder-gray-400 transition-all duration-200 min-h-[120px]"
             rows={4}
+            placeholder="תן לאנשים להכיר אותך טוב יותר..."
           />
         </div>
+      </div>
 
+      {/* Submit Button */}
+      <div className="pt-4">
         <button 
           type="submit" 
-          className="w-full py-2 bg-blue-500 text-white rounded"
           disabled={loading}
+          className="w-full px-6 py-3 bg-gradient-to-r from-[#FFA066] to-[#FF6B6B] 
+                   text-white font-medium rounded-xl shadow-md
+                   hover:shadow-lg transform hover:-translate-y-0.5
+                   transition-all duration-200 disabled:opacity-50
+                   disabled:cursor-not-allowed disabled:transform-none"
         >
-          {loading ? 'שומר...' : 'שמור שינויים'}
+          {loading ? (
+            <span className="flex items-center justify-center">
+              <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              שומר שינויים...
+            </span>
+          ) : 'שמור שינויים'}
         </button>
-      </form>
-    </div>
-  );
+      </div>
+    </form>
+  </div>
+);
 };
 
 export default ProfileEditForm;

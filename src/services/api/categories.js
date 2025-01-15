@@ -8,6 +8,7 @@ export const categoryService = {
   getActiveCategories: async () => {
     try {
       const response = await axios.get(`${API_URL}/categories/active`);
+      console.log('getActiveCategories:', response.data);
       return response.data;
     } catch (error) {
       throw error.response?.data || error.message;

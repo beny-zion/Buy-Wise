@@ -18,8 +18,8 @@ const SearchPanel = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm shadow-lg z-50">
-      <div className="w-full max-w-[550px] mx-auto px-4 py-2">
+    <div className="relative">
+      <div className="max-w-[550px] mx-auto">
         <div className="relative">
           <input
             type="text"
@@ -28,16 +28,25 @@ const SearchPanel = () => {
             onFocus={handleFocus}
             onBlur={handleBlur}
             placeholder="חיפוש מוצרים וקטגוריות..."
-            className="w-full h-12 pl-10 pr-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full h-8 pl-10 pr-4 rounded-lg 
+                     border border-gray-200
+                     bg-white/90
+                     focus:outline-none  /* הסרת המסגרת השחורה */
+                     focus:border-[#FFA066]  /* צבע המסגרת בזמן פוקוס */
+                     focus:ring-0      /* הסרת הטבעת */
+                     transition-all duration-200
+                     placeholder-gray-400 text-gray-700"
             dir="rtl"
           />
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-          
-          {showResults && searchQuery.trim() && (
-            <SearchResults query={searchQuery} />
-          )}
+          <Search 
+            className="absolute left-3 top-1/2 transform -translate-y-1/2 
+                     text-[#FFA066] transition-colors duration-200" 
+            size={20}
+          />
         </div>
       </div>
+
+      {showResults && searchQuery.trim() && <SearchResults query={searchQuery} />}
     </div>
   );
 };

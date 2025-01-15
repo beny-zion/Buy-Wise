@@ -31,4 +31,4 @@ const SearchBar = ({ onFocus }) => {
   );
 };
 
-export default SearchBar;
+// export default SearchBar;

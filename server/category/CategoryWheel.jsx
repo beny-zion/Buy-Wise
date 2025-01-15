@@ -94,4 +94,4 @@ const CategoryWheel = ({ isOpen, onClose, onSelectCategory }) => {
   );
 };
 
-export default CategoryWheel;
+// export default CategoryWheel;

@@ -57,24 +57,47 @@
 // };
 
 // export default ProductCard;
-import React from 'react';
-import { Heart } from 'lucide-react';
+import React ,{ useState }from 'react';
+import { Heart ,Share2} from 'lucide-react';
+import { useProductTracking } from './hooks/useProductTracking';
 
 const ProductCard = ({ product }) => {
   if (!product) return null;
+    const [shareOpen, setShareOpen] = useState(false);
+  
+  const { handleAffiliateClick } = useProductTracking(product._id);
+
+  const onAffiliateClick = (e) => {
+    e.preventDefault();
+    handleAffiliateClick();
+    window.open(product.affiliateLink, '_blank');
+  };
+
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: 'שיתוף מוצר',
+        url: window.location.href,
+      });
+    } else {
+      setShareOpen(true);
+      navigator.clipboard.writeText(window.location.href);
+      setTimeout(() => setShareOpen(false), 2000);
+    }
+  };
 
   return (
     <div 
-  className="h-screen w-full flex items-center justify-center bg-gray-100"
-  style={{ 
-    height: 'calc(100vh - 100px)',  // נחשב את הגובה הזמין
-    marginTop: '50px',              // נקבע את המרחק מסרגל החיפוש
-    marginBottom: '5px'           // נקבע את המרחק מהתחתית
-  }}
->
-<div
+      className="h-screen w-full flex items-center justify-center bg-gray-100"
+      style={{ 
+        height: 'calc(100vh - 100px)',
+        marginTop: '50px',
+        marginBottom: '5px'
+      }}
+    >
+      <div
         className="relative w-full max-w-xs sm:max-w-sm bg-white rounded-lg overflow-hidden shadow-lg"
-        style={{ height: 'calc(100vh - 75px)', marginTop: '80px' }} // Adjust according to the search bar height
+        style={{ height: 'calc(100vh - 75px)', marginTop: '80px' }}
       >
         {/* תמונת המוצר */}
         <img
@@ -82,49 +105,59 @@ const ProductCard = ({ product }) => {
           alt={product.title}
           className="w-full h-full object-cover"
         />
+        
+        {/* כפתור שיתוף */}
+        <div className="absolute top-3 left-3">
+          <button 
+            onClick={handleShare}
+            className="p-2 bg-white/90 backdrop-blur-sm rounded-full shadow-md hover:bg-white 
+                     transition-all duration-200 hover:shadow-lg"
+          >
+            <Share2 className="w-5 h-5 text-gray-700" />
+          </button>
+          {shareOpen && (
+            <div className="absolute top-12 left-0 bg-black/80 backdrop-blur-sm text-white 
+                          text-xs py-1.5 px-3 rounded-full whitespace-nowrap">
+              הקישור הועתק!
+            </div>
+          )}
+        </div>
 
-        {/* כפתור לייק */}
-        <button 
-          className="absolute top-4 left-4 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center
-                     hover:bg-white transition-colors"
-        >
-          <Heart className="w-6 h-6 text-gray-600" />
-        </button>
-
-        {/* Overlay למידע */}
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+        {/* אזור המידע */}
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent 
+                      pt-20 pb-6 px-4">
           {/* פרטי המוכר */}
-          <div className="flex items-center space-x-2 mb-4" dir="rtl">
+          <div className="flex items-center gap-3 mb-4" dir="rtl">
             <img
               src={product.vendorId?.profileImage || '/default-avatar.png'}
               alt={product.vendorId?.fullName}
-              className="w-10 h-10 rounded-full border border-white/20"
+              className="w-12 h-12 rounded-full border-2 border-white/20"
             />
             <div className="text-white">
               <div className="font-medium">{product.vendorId?.fullName}</div>
-              <div className="text-sm opacity-80">{product.vendorId?.bio}</div>
+              <div className="text-sm text-white/80">{product.vendorId?.bio}</div>
             </div>
           </div>
 
-          {/* המלצת המוכר */}
-          <p className="text-white mb-6 text-right" dir="rtl">
-            {product.recommendation}
-          </p>
+          {/* המלצת המוכר וכפתור */}
+          <div className="flex flex-col gap-4" dir="rtl">
+            <p className="text-white/90 text-sm leading-relaxed">
+              {product.recommendation}
+            </p>
 
-          {/* כפתור רכישה */}
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              window.open(product.affiliateLink, '_blank');
-              // if (onAffiliateLinkClick) {
-              //   onAffiliateLinkClick();
-              // }
-            }}
-            className="block w-full bg-blue-500 hover:bg-blue-600 text-white text-center py-3 rounded-lg 
-                     transition-colors duration-200 font-medium"
-          >
-            לרכישה באלי אקספרס
-          </button>
+            {/* אזור תחתון עם כפתור */}
+            <div className="flex justify-start items-center mt-2">
+              <button
+                onClick={onAffiliateClick}
+                className="bg-[#FFA066] hover:bg-[#FF8C3D] text-white px-6 py-2.5 
+                         rounded-full text-sm font-medium shadow-lg 
+                         transition-all duration-200 hover:shadow-xl 
+                         hover:scale-105 active:scale-95"
+              >
+                לרכישה באלי אקספרס
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

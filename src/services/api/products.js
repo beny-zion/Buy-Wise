@@ -14,6 +14,7 @@ export const createProduct = async (productData) => {
 };
 
 export const getProduct = async (productId) => {
+  console.log("!!!!!!!!!!!!!!!!!")
   try {
     const response = await axios.get(`${API_URL}/${productId}`);
     return response.data;

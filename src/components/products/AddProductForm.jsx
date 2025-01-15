@@ -55,90 +55,102 @@ const AddProductForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6" dir="rtl">
-      <div>
-        <label htmlFor="categories" className="block text-sm font-medium text-gray-700">
-          קטגוריות
-        </label>
-        <div className="mt-1">
-          <CategorySelector
-            selectedCategories={formData.categories}
-            onChange={handleCategoriesChange}
-          />
-        </div>
-        <p className="mt-2 text-sm text-gray-500">
-          בחר לפחות קטגוריה אחת עבור המוצר
-        </p>
-      </div>
+    <form onSubmit={handleSubmit} className="space-y-8" dir="rtl">
+  <div>
+    <label htmlFor="categories" className="block text-lg font-medium text-gray-700 mb-3">
+      קטגוריות
+    </label>
+    <div className="mt-1">
+      <CategorySelector
+        selectedCategories={formData.categories}
+        onChange={handleCategoriesChange}
+      />
+    </div>
+    <p className="mt-2 text-sm text-gray-500">
+      בחר לפחות קטגוריה אחת עבור המוצר
+    </p>
+  </div>
 
-      <div>
-        <label htmlFor="htmlCode" className="block text-sm font-medium text-gray-700">
-          קוד HTML מאלי אקספרס
-        </label>
-        <div className="mt-1">
-          <textarea
-            id="htmlCode"
-            name="htmlCode"
-            rows={4}
-            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-            value={formData.htmlCode}
-            onChange={handleChange}
-            placeholder='הדבק כאן את קוד ה-HTML מאלי אקספרס'
-            required
-            dir="ltr"
-          />
-        </div>
-        <p className="mt-2 text-sm text-gray-500">
-          העתק את קוד ה-HTML של המוצר מאלי אקספרס והדבק אותו כאן
-        </p>
-      </div>
+  <div>
+    <label htmlFor="htmlCode" className="block text-lg font-medium text-gray-700 mb-3">
+      קוד HTML מאלי אקספרס
+    </label>
+    <div className="mt-1">
+      <textarea
+        id="htmlCode"
+        name="htmlCode"
+        rows={4}
+        className="block w-full rounded-xl border-gray-200 shadow-sm 
+                   focus:border-[#FFA066] focus:ring-[#FFA066] focus:ring-1
+                   bg-white/50 backdrop-blur-sm transition-all duration-200"
+        value={formData.htmlCode}
+        onChange={handleChange}
+        placeholder='הדבק כאן את קוד ה-HTML מאלי אקספרס'
+        required
+        dir="ltr"
+      />
+    </div>
+    <p className="mt-2 text-sm text-gray-500">
+      העתק את קוד ה-HTML של המוצר מאלי אקספרס והדבק אותו כאן
+    </p>
+  </div>
 
-      <div>
-        <label htmlFor="recommendation" className="block text-sm font-medium text-gray-700">
-          ההמלצה שלך על המוצר
-        </label>
-        <div className="mt-1">
-          <textarea
-            id="recommendation"
-            name="recommendation"
-            rows={4}
-            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-            value={formData.recommendation}
-            onChange={handleChange}
-            placeholder='כתוב כאן למה אתה ממליץ על המוצר...'
-            required
-            maxLength={1000}
-          />
-        </div>
-        <p className="mt-2 text-sm text-gray-500">
-          {1000 - formData.recommendation.length} תווים נותרו
-        </p>
-      </div>
+  <div>
+    <label htmlFor="recommendation" className="block text-lg font-medium text-gray-700 mb-3">
+      ההמלצה שלך על המוצר
+    </label>
+    <div className="mt-1">
+      <textarea
+        id="recommendation"
+        name="recommendation"
+        rows={4}
+        className="block w-full rounded-xl border-gray-200 shadow-sm 
+                   focus:border-[#FFA066] focus:ring-[#FFA066] focus:ring-1
+                   bg-white/50 backdrop-blur-sm transition-all duration-200"
+        value={formData.recommendation}
+        onChange={handleChange}
+        placeholder='כתוב כאן למה אתה ממליץ על המוצר...'
+        required
+        maxLength={1000}
+      />
+    </div>
+    <div className="mt-2 flex justify-between items-center">
+      <p className="text-sm text-gray-500">
+        {1000 - formData.recommendation.length} תווים נותרו
+      </p>
+    </div>
+  </div>
 
-      {error && (
-        <div className="bg-red-50 text-red-600 p-3 rounded-lg text-sm">
-          {error}
-        </div>
-      )}
+  {error && (
+    <div className="bg-red-50/50 backdrop-blur-sm text-red-600 p-4 rounded-xl text-sm border border-red-100">
+      {error}
+    </div>
+  )}
 
-      <div>
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-gray-400 disabled:cursor-not-allowed"
-        >
-          {loading ? (
-            <>
-              <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-              </svg>
-              מוסיף מוצר...
-            </>
-          ) : 'הוסף מוצר'}
-        </button>
-      </div>
-    </form>
+  <div>
+    <button
+      type="submit"
+      disabled={loading}
+      className="w-full flex justify-center py-3 px-6 border border-transparent 
+                rounded-xl text-base font-medium text-white 
+                bg-gradient-to-r from-[#FFA066] to-[#FF6B6B]
+                hover:from-[#FF8C3D] hover:to-[#FF5B5B]
+                focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FFA066]
+                disabled:opacity-50 disabled:cursor-not-allowed
+                transition-all duration-200 shadow-md hover:shadow-lg"
+    >
+      {loading ? (
+        <div className="flex items-center">
+          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+          </svg>
+          מוסיף מוצר...
+        </div>
+      ) : 'הוסף מוצר'}
+    </button>
+  </div>
+</form>
   );
 };
 

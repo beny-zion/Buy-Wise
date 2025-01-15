@@ -53,4 +53,4 @@ const RecommenderCircle = ({ vendor }) => {
   );
 };
 
-export default RecommenderCircle;
+// export default RecommenderCircle;
