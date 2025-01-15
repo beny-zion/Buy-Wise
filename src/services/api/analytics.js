@@ -1,7 +1,7 @@
 // services/api/analytics.js
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3333/analytics';
+const API_URL = 'https://product-pick-server.onrender.com/analytics';
 
 export const analyticsService = {
   // מעקב אחר צפייה במוצר

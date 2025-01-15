@@ -1,7 +1,7 @@
 // services/api/search.js
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3333';
+const API_URL = 'https://product-pick-server.onrender.com';
 
 export const searchService = {
   async search(query) {

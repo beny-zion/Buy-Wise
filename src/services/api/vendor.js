@@ -1,7 +1,7 @@
 // services/api/vendor.js
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3333/vendor';
+const API_URL = 'https://product-pick-server.onrender.com/vendor';
 
 export const vendorService = {
   // קבלת כל המוצרים של המוכר
