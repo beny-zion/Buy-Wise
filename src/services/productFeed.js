@@ -5,6 +5,7 @@ class ProductFeedService {
   constructor() {
     this.isNavigating = false;
     this.initialLoadDone = false;
+    this.isMobile = /iPhone|iPad|iPod|Android/i.test(window.navigator.userAgent);
   }
 
   // ניהול ניווט
@@ -37,6 +38,10 @@ class ProductFeedService {
 
   // ניהול גלילה
   createScrollHandler = (currentIndex, products, callbacks) => {
+      if (this.isMobile) {
+        // בטלפונים לא נמנע את הגלילה הטבעית
+        return () => {};
+      }
     return throttle((e) => {
       e.preventDefault();
       const threshold = 1;
@@ -55,6 +60,7 @@ class ProductFeedService {
 
   // ניהול מקלדת
   createKeyboardHandler = (currentIndex, products, callbacks) => {
+    
     return throttle((e) => {
       if (e.key === 'ArrowUp') {
         e.preventDefault();
