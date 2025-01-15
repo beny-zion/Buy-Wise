@@ -71,6 +71,23 @@ useEffect(() => {
     }
   }, [selectedCategory?._id, id]);
 
+  const handleNavigation = async (direction) => {
+    if (isNavigating.current) return;
+    isNavigating.current = true;
+  
+    const newIndex = direction === 'up' ? currentIndex - 1 : currentIndex + 1;
+    
+    if (newIndex >= 0 && newIndex < products.length) {
+      setDirection(direction);
+      setCurrentIndex(newIndex);
+      navigate(`/product/${products[newIndex]._id}`);
+    }
+  
+    setTimeout(() => {
+      isNavigating.current = false;
+    }, 500);
+  };
+
   // טעינת מוצרים נוספים
   const loadMoreProducts = useCallback(async () => {
     if (!hasMore || loadingMore) return;
@@ -145,6 +162,7 @@ useEffect(() => {
     loadingMore,
     hasMore,
     error,
-    feedRef
+    feedRef,
+    handleNavigation
   };
 };
