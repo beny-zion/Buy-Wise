@@ -46,7 +46,8 @@ const AddProductForm = () => {
   
       const response = await createProduct(productData);
       console.log(response);
-      navigate(`/products/${response.product._id}`);
+      // navigate(`/products/${response.product._id}`);
+      navigate(`/`);
     } catch (err) {
       setError(err.message || 'שגיאה בהוספת המוצר');
     } finally {
