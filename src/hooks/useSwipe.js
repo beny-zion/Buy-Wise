@@ -3,7 +3,7 @@
 export const useSwipe = (onSwipe) => {
     let touchStartY = 0;
     let touchEndY = 0;
-    const minSwipeDistance = 50;
+    const minSwipeDistance = 5;
   
     const onTouchStart = (e) => {
       touchStartY = e.touches[0].clientY;
