@@ -25,6 +25,7 @@ const ProductFeed = () => {
   };
 
   const { onTouchStart, onTouchEnd } = useSwipe(onSwipe);
+  
 
   if (loading) return <LoadingState />;
   if (error) return <ErrorState message={error} />;
