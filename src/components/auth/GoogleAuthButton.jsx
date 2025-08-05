@@ -1,10 +1,12 @@
-/* needed */
 // src/components/auth/GoogleAuthButton.jsx
 import React from 'react';
 
 const GoogleAuthButton = () => {
+  // 🌍 שימוש ב-Environment Variables
+  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3333';
+  
   const handleGoogleAuth = () => {
-    window.location.href = 'http://localhost:3333/user/google';
+    window.location.href = `${apiUrl}/user/google`;
   };
 
   return (
