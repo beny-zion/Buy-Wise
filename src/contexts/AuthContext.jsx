@@ -1,8 +1,8 @@
+/* needed */
 // src/contexts/AuthContext.jsx
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as authService from '../services/api/auth';
-
 
 const AuthContext = createContext(null);
 
@@ -15,7 +15,6 @@ export const AuthProvider = ({ children }) => {
     const checkAuth = async () => {
       try {
         const response = await authService.getCurrentUser();
-        console.log("user in token",response.data.user)
         if (response?.data?.user) {
           setUser(response.data.user);
         }
@@ -37,31 +36,16 @@ export const AuthProvider = ({ children }) => {
     return response.data.user;
   };
 
-  const login = async (credentials) => {
-    const response = await authService.login(credentials);
-    setUser(response.data.user);
-    return response.data.user;
-  };
-
-  const register = async (userData) => {
-    const response = await authService.register(userData);
-    setUser(response.data.user);
-    return response.data.user;
-  };
-
   const logout = async () => {
     await authService.logout();
     setUser(null);
-    // navigate('/');
+    navigate('/login');
   };
 
   const value = {
-    updateUserProfile,
-    setUser,
     user,
     loading,
-    login,
-    register,
+    updateUserProfile,
     logout
   };
 

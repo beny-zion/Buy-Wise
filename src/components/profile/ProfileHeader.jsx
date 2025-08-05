@@ -1,3 +1,4 @@
+/* needed */
 // src/components/profile/ProfileHeader.jsx
 import React from 'react';
 import SocialLinks from './SocialLinks';

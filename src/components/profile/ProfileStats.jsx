@@ -1,3 +1,4 @@
+/* needed */
 // src/components/profile/ProfileStats.jsx
 import React from 'react';
 

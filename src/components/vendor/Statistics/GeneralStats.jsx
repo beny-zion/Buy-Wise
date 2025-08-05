@@ -1,14 +1,15 @@
-// components/vendor/Statistics/GeneralStats.jsx
+/* needed */
+// components/vendor/Statistics/GeneralStats.jsx - עדכון לאנליטיקה פשוטה
 import React, { useState, useEffect } from 'react';
 import { vendorService } from '../../../services/api/vendor';
-import { Eye, MousePointer, TrendingUp, Clock } from 'lucide-react';
+import { Monitor, MousePointer, TrendingUp, Package } from 'lucide-react';
 
 const GeneralStats = ({ className = '' }) => {
   const [stats, setStats] = useState({
-    totalViews: 0,
+    totalModalOpens: 0,
     totalClicks: 0,
-    conversionRate: 0,
-    averageViewDuration: 0
+    averageConversionRate: 0,
+    totalProducts: 0
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -16,15 +17,16 @@ const GeneralStats = ({ className = '' }) => {
   useEffect(() => {
     const loadStats = async () => {
       try {
+        setLoading(true);
         const response = await vendorService.getStats();
-        setStats(response.data || {
-          totalViews: 0,
-          totalClicks: 0,
-          conversionRate: 0,
-          averageViewDuration: 0
-        });
+        
+        // אם יש נתונים תקינים, שמור אותם
+        if (response.success && response.data) {
+          setStats(response.data);
+        }
       } catch (err) {
-        setError(err.message);
+        console.error('Error loading stats:', err);
+        setError('שגיאה בטעינת הסטטיסטיקות');
       } finally {
         setLoading(false);
       }
@@ -32,15 +34,6 @@ const GeneralStats = ({ className = '' }) => {
 
     loadStats();
   }, []);
-
-  if (loading) return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {[1, 2, 3, 4].map(i => (
-        <div key={i} className="animate-pulse bg-white/50 rounded-xl h-28" />
-      ))}
-    </div>
-  );
-  if (error) return null; // נסתיר שגיאות בסטטיסטיקות הכלליות
 
   const StatCard = ({ icon: Icon, label, value }) => (
     <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-md hover:shadow-lg 
@@ -61,36 +54,46 @@ const GeneralStats = ({ className = '' }) => {
     </div>
   );
 
-  // מבטיח שיש לנו ערכים תקינים
+  // עיבוד ערכים להצגה
   const displayStats = {
-    totalViews: stats?.totalViews || 0,
-    totalClicks: stats?.totalClicks || 0,
-    conversionRate: stats?.conversionRate || 0,
-    averageViewDuration: stats?.averageViewDuration || 0
+    totalModalOpens: loading ? '-' : stats.totalModalOpens?.toLocaleString() || 0,
+    totalClicks: loading ? '-' : stats.totalClicks?.toLocaleString() || 0,
+    averageConversionRate: loading ? '-' : `${(stats.averageConversionRate || 0).toFixed(1)}%`,
+    totalProducts: loading ? '-' : stats.totalProducts?.toLocaleString() || 0
   };
 
   return (
-    <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ${className}`}>
-      <StatCard
-        icon={Eye}
-        label="סה״כ צפיות"
-        value={displayStats.totalViews.toLocaleString()}
-      />
-      <StatCard
-        icon={MousePointer}
-        label="סה״כ קליקים"
-        value={displayStats.totalClicks.toLocaleString()}
-      />
-      <StatCard
-        icon={TrendingUp}
-        label="אחוז המרה"
-        value={`${displayStats.conversionRate.toFixed(1)}%`}
-      />
-      <StatCard
-        icon={Clock}
-        label="זמן צפייה ממוצע"
-        value={`${displayStats.averageViewDuration.toFixed(1)}s`}
-      />
+    <div className={className}>
+      {/* כרטיסי סטטיסטיקה */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <StatCard
+          icon={Monitor}
+          label="פתיחות מודל"
+          value={displayStats.totalModalOpens}
+        />
+        <StatCard
+          icon={MousePointer}
+          label="קליקים"
+          value={displayStats.totalClicks}
+        />
+        <StatCard
+          icon={TrendingUp}
+          label="אחוז המרה ממוצע"
+          value={displayStats.averageConversionRate}
+        />
+        <StatCard
+          icon={Package}
+          label="סה״כ מוצרים"
+          value={displayStats.totalProducts}
+        />
+      </div>
+      
+      {/* הודעת שגיאה */}
+      {error && (
+        <div className="mt-4 text-center text-red-500 bg-red-50 p-3 rounded-lg text-sm">
+          {error}
+        </div>
+      )}
     </div>
   );
 };

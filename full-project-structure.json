@@ -1,0 +1,884 @@
+{
+  "path": "/",
+  "type": "directory",
+  "items": [
+    {
+      "name": "README.md",
+      "path": "README.md",
+      "type": "file",
+      "extension": ".md",
+      "size": 326,
+      "modified": "2025-01-12T22:28:39.848Z"
+    },
+    {
+      "name": "copyFile.js",
+      "path": "copyFile.js",
+      "type": "file",
+      "extension": ".js",
+      "size": 388,
+      "modified": "2025-01-19T20:05:52.752Z"
+    },
+    {
+      "path": "dist",
+      "type": "directory",
+      "items": [
+        {
+          "name": "_redirects",
+          "path": "dist\\_redirects",
+          "type": "file",
+          "extension": "",
+          "size": 42,
+          "modified": "2025-01-15T19:13:47.783Z"
+        },
+        {
+          "path": "dist\\assets",
+          "type": "directory",
+          "items": [
+            {
+              "name": "main-BgXAd-UB.css",
+              "path": "dist\\assets\\main-BgXAd-UB.css",
+              "type": "file",
+              "extension": ".css",
+              "size": 31811,
+              "modified": "2025-01-15T19:27:29.594Z"
+            },
+            {
+              "name": "main-CXQG6M4r.js",
+              "path": "dist\\assets\\main-CXQG6M4r.js",
+              "type": "file",
+              "extension": ".js",
+              "size": 506482,
+              "modified": "2025-01-15T19:27:29.595Z"
+            },
+            {
+              "name": "new-CLMRlBBz.svg",
+              "path": "dist\\assets\\new-CLMRlBBz.svg",
+              "type": "file",
+              "extension": ".svg",
+              "size": 15253,
+              "modified": "2025-01-15T19:27:29.593Z"
+            }
+          ]
+        },
+        {
+          "name": "index.html",
+          "path": "dist\\index.html",
+          "type": "file",
+          "extension": ".html",
+          "size": 452,
+          "modified": "2025-01-15T19:27:29.593Z"
+        },
+        {
+          "name": "new.svg",
+          "path": "dist\\new.svg",
+          "type": "file",
+          "extension": ".svg",
+          "size": 15253,
+          "modified": "2025-01-15T00:46:56.462Z"
+        },
+        {
+          "name": "vite.svg",
+          "path": "dist\\vite.svg",
+          "type": "file",
+          "extension": ".svg",
+          "size": 1497,
+          "modified": "2024-12-26T09:53:48.276Z"
+        }
+      ]
+    },
+    {
+      "name": "eslint.config.js",
+      "path": "eslint.config.js",
+      "type": "file",
+      "extension": ".js",
+      "size": 1003,
+      "modified": "2024-12-26T09:53:48.176Z"
+    },
+    {
+      "name": "find-files.js",
+      "path": "find-files.js",
+      "type": "file",
+      "extension": ".js",
+      "size": 6105,
+      "modified": "2025-03-17T10:55:30.240Z"
+    },
+    {
+      "name": "index.html",
+      "path": "index.html",
+      "type": "file",
+      "extension": ".html",
+      "size": 356,
+      "modified": "2025-03-18T09:41:07.394Z"
+    },
+    {
+      "name": "map-full-project.js",
+      "path": "map-full-project.js",
+      "type": "file",
+      "extension": ".js",
+      "size": 5366,
+      "modified": "2025-03-17T11:36:49.974Z"
+    },
+    {
+      "name": "map-project.js",
+      "path": "map-project.js",
+      "type": "file",
+      "extension": ".js",
+      "size": 4534,
+      "modified": "2025-03-17T10:41:38.783Z"
+    },
+    {
+      "name": "package-lock.json",
+      "path": "package-lock.json",
+      "type": "file",
+      "extension": ".json",
+      "size": 265012,
+      "modified": "2025-03-17T10:44:05.605Z"
+    },
+    {
+      "name": "package.json",
+      "path": "package.json",
+      "type": "file",
+      "extension": ".json",
+      "size": 1222,
+      "modified": "2025-03-17T10:44:05.473Z"
+    },
+    {
+      "name": "postcss.config.js",
+      "path": "postcss.config.js",
+      "type": "file",
+      "extension": ".js",
+      "size": 80,
+      "modified": "2024-12-26T09:54:46.869Z"
+    },
+    {
+      "path": "public",
+      "type": "directory",
+      "items": [
+        {
+          "name": "_redirects",
+          "path": "public\\_redirects",
+          "type": "file",
+          "extension": "",
+          "size": 42,
+          "modified": "2025-01-15T19:13:47.783Z"
+        },
+        {
+          "name": "new.svg",
+          "path": "public\\new.svg",
+          "type": "file",
+          "extension": ".svg",
+          "size": 15253,
+          "modified": "2025-01-15T00:46:56.462Z"
+        },
+        {
+          "name": "vite.svg",
+          "path": "public\\vite.svg",
+          "type": "file",
+          "extension": ".svg",
+          "size": 1497,
+          "modified": "2024-12-26T09:53:48.276Z"
+        }
+      ]
+    },
+    {
+      "path": "src",
+      "type": "directory",
+      "items": [
+        {
+          "name": "App.jsx",
+          "path": "src\\App.jsx",
+          "type": "file",
+          "extension": ".jsx",
+          "size": 3426,
+          "modified": "2025-07-14T20:40:47.647Z"
+        },
+        {
+          "path": "src\\assets",
+          "type": "directory",
+          "items": [
+            {
+              "path": "src\\assets\\logo",
+              "type": "directory",
+              "items": [
+                {
+                  "name": "new.svg",
+                  "path": "src\\assets\\logo\\new.svg",
+                  "type": "file",
+                  "extension": ".svg",
+                  "size": 15253,
+                  "modified": "2025-01-15T00:46:56.462Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "src\\components",
+          "type": "directory",
+          "items": [
+            {
+              "path": "src\\components\\auth",
+              "type": "directory",
+              "items": [
+                {
+                  "name": "GoogleAuthButton.jsx",
+                  "path": "src\\components\\auth\\GoogleAuthButton.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 881,
+                  "modified": "2025-07-14T20:50:58.651Z"
+                }
+              ]
+            },
+            {
+              "path": "src\\components\\comments",
+              "type": "directory",
+              "items": [
+                {
+                  "name": "CommentForm.jsx",
+                  "path": "src\\components\\comments\\CommentForm.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 7031,
+                  "modified": "2025-07-14T21:02:01.739Z"
+                },
+                {
+                  "name": "CommentItem.jsx",
+                  "path": "src\\components\\comments\\CommentItem.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 10616,
+                  "modified": "2025-07-14T21:02:56.438Z"
+                },
+                {
+                  "name": "CommentList.jsx",
+                  "path": "src\\components\\comments\\CommentList.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 1852,
+                  "modified": "2025-07-14T21:02:51.535Z"
+                },
+                {
+                  "name": "CommentSection.jsx",
+                  "path": "src\\components\\comments\\CommentSection.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 6775,
+                  "modified": "2025-07-14T21:00:57.959Z"
+                },
+                {
+                  "name": "CommentStats.jsx",
+                  "path": "src\\components\\comments\\CommentStats.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 1479,
+                  "modified": "2025-07-14T21:03:24.721Z"
+                }
+              ]
+            },
+            {
+              "path": "src\\components\\common",
+              "type": "directory",
+              "items": [
+                {
+                  "name": "DebugRouter.jsx",
+                  "path": "src\\components\\common\\DebugRouter.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 928,
+                  "modified": "2025-07-14T21:16:33.666Z"
+                },
+                {
+                  "name": "ImageUploader.jsx",
+                  "path": "src\\components\\common\\ImageUploader.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 2088,
+                  "modified": "2025-07-14T20:52:34.553Z"
+                },
+                {
+                  "name": "PrivateRoute.jsx",
+                  "path": "src\\components\\common\\PrivateRoute.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 647,
+                  "modified": "2025-07-14T20:57:49.316Z"
+                },
+                {
+                  "name": "ProductViewerWrapper.jsx",
+                  "path": "src\\components\\common\\ProductViewerWrapper.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 7186,
+                  "modified": "2025-07-14T21:17:08.460Z"
+                },
+                {
+                  "name": "SearchConnector.jsx",
+                  "path": "src\\components\\common\\SearchConnector.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 1451,
+                  "modified": "2025-07-14T21:04:36.691Z"
+                },
+                {
+                  "name": "SimpleImage.jsx",
+                  "path": "src\\components\\common\\SimpleImage.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 5354,
+                  "modified": "2025-07-14T21:15:06.893Z"
+                }
+              ]
+            },
+            {
+              "path": "src\\components\\home",
+              "type": "directory",
+              "items": [
+                {
+                  "path": "src\\components\\home\\navigation",
+                  "type": "directory",
+                  "items": [
+                    {
+                      "name": "ProfileCircle.jsx",
+                      "path": "src\\components\\home\\navigation\\ProfileCircle.jsx",
+                      "type": "file",
+                      "extension": ".jsx",
+                      "size": 3222,
+                      "modified": "2025-07-14T20:46:29.850Z"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "path": "src\\components\\layout",
+              "type": "directory",
+              "items": [
+                {
+                  "name": "Layout.jsx",
+                  "path": "src\\components\\layout\\Layout.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 2514,
+                  "modified": "2025-07-14T20:41:31.881Z"
+                }
+              ]
+            },
+            {
+              "path": "src\\components\\notifications",
+              "type": "directory",
+              "items": [
+                {
+                  "name": "NotificationBadge.jsx",
+                  "path": "src\\components\\notifications\\NotificationBadge.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 854,
+                  "modified": "2025-07-14T20:48:37.832Z"
+                }
+              ]
+            },
+            {
+              "path": "src\\components\\product-viewer",
+              "type": "directory",
+              "items": [
+                {
+                  "path": "src\\components\\product-viewer\\ProductCard",
+                  "type": "directory",
+                  "items": [
+                    {
+                      "name": "EnhancedImageGallery.jsx",
+                      "path": "src\\components\\product-viewer\\ProductCard\\EnhancedImageGallery.jsx",
+                      "type": "file",
+                      "extension": ".jsx",
+                      "size": 8111,
+                      "modified": "2025-07-14T21:00:38.396Z"
+                    },
+                    {
+                      "name": "ProductDetailsModal.jsx",
+                      "path": "src\\components\\product-viewer\\ProductCard\\ProductDetailsModal.jsx",
+                      "type": "file",
+                      "extension": ".jsx",
+                      "size": 26369,
+                      "modified": "2025-07-14T21:00:29.296Z"
+                    },
+                    {
+                      "name": "index.jsx",
+                      "path": "src\\components\\product-viewer\\ProductCard\\index.jsx",
+                      "type": "file",
+                      "extension": ".jsx",
+                      "size": 5836,
+                      "modified": "2025-07-14T20:59:33.817Z"
+                    }
+                  ]
+                },
+                {
+                  "name": "ProductFeed.jsx",
+                  "path": "src\\components\\product-viewer\\ProductFeed.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 9504,
+                  "modified": "2025-07-14T21:00:12.445Z"
+                },
+                {
+                  "name": "index.js",
+                  "path": "src\\components\\product-viewer\\index.js",
+                  "type": "file",
+                  "extension": ".js",
+                  "size": 450,
+                  "modified": "2025-07-14T20:58:14.626Z"
+                },
+                {
+                  "path": "src\\components\\product-viewer\\shared",
+                  "type": "directory",
+                  "items": [
+                    {
+                      "name": "ActionButton.jsx",
+                      "path": "src\\components\\product-viewer\\shared\\ActionButton.jsx",
+                      "type": "file",
+                      "extension": ".jsx",
+                      "size": 1367,
+                      "modified": "2025-07-14T21:05:33.921Z"
+                    },
+                    {
+                      "name": "PriceDisplay.jsx",
+                      "path": "src\\components\\product-viewer\\shared\\PriceDisplay.jsx",
+                      "type": "file",
+                      "extension": ".jsx",
+                      "size": 1573,
+                      "modified": "2025-07-14T21:05:43.546Z"
+                    },
+                    {
+                      "name": "RecommenderProfile.jsx",
+                      "path": "src\\components\\product-viewer\\shared\\RecommenderProfile.jsx",
+                      "type": "file",
+                      "extension": ".jsx",
+                      "size": 2262,
+                      "modified": "2025-07-14T21:06:05.562Z"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "path": "src\\components\\profile",
+              "type": "directory",
+              "items": [
+                {
+                  "name": "ProfileEditForm.jsx",
+                  "path": "src\\components\\profile\\ProfileEditForm.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 7862,
+                  "modified": "2025-07-14T20:52:28.151Z"
+                },
+                {
+                  "name": "ProfileHeader.jsx",
+                  "path": "src\\components\\profile\\ProfileHeader.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 903,
+                  "modified": "2025-07-14T20:52:04.284Z"
+                },
+                {
+                  "name": "ProfileStats.jsx",
+                  "path": "src\\components\\profile\\ProfileStats.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 1100,
+                  "modified": "2025-07-14T20:52:55.747Z"
+                },
+                {
+                  "name": "SocialLinks.jsx",
+                  "path": "src\\components\\profile\\SocialLinks.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 484,
+                  "modified": "2025-07-14T20:52:14.503Z"
+                }
+              ]
+            },
+            {
+              "path": "src\\components\\search",
+              "type": "directory",
+              "items": [
+                {
+                  "name": "SearchDrawer.jsx",
+                  "path": "src\\components\\search\\SearchDrawer.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 21895,
+                  "modified": "2025-07-14T20:44:24.816Z"
+                },
+                {
+                  "name": "SearchPanel.jsx",
+                  "path": "src\\components\\search\\SearchPanel.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 11087,
+                  "modified": "2025-07-14T20:41:45.480Z"
+                },
+                {
+                  "name": "SearchResults.jsx",
+                  "path": "src\\components\\search\\SearchResults.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 8525,
+                  "modified": "2025-07-14T20:44:44.062Z"
+                },
+                {
+                  "name": "SearchSuggestions.jsx",
+                  "path": "src\\components\\search\\SearchSuggestions.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 4386,
+                  "modified": "2025-07-14T20:44:05.776Z"
+                }
+              ]
+            },
+            {
+              "path": "src\\components\\vendor",
+              "type": "directory",
+              "items": [
+                {
+                  "path": "src\\components\\vendor\\Statistics",
+                  "type": "directory",
+                  "items": [
+                    {
+                      "name": "GeneralStats.jsx",
+                      "path": "src\\components\\vendor\\Statistics\\GeneralStats.jsx",
+                      "type": "file",
+                      "extension": ".jsx",
+                      "size": 3396,
+                      "modified": "2025-07-14T21:06:56.103Z"
+                    }
+                  ]
+                },
+                {
+                  "path": "src\\components\\vendor\\questions",
+                  "type": "directory",
+                  "items": [
+                    {
+                      "name": "QuestionItem.jsx",
+                      "path": "src\\components\\vendor\\questions\\QuestionItem.jsx",
+                      "type": "file",
+                      "extension": ".jsx",
+                      "size": 4061,
+                      "modified": "2025-07-14T21:15:47.293Z"
+                    },
+                    {
+                      "name": "QuestionsList.jsx",
+                      "path": "src\\components\\vendor\\questions\\QuestionsList.jsx",
+                      "type": "file",
+                      "extension": ".jsx",
+                      "size": 1073,
+                      "modified": "2025-07-14T21:15:40.916Z"
+                    },
+                    {
+                      "name": "VendorReplyForm.jsx",
+                      "path": "src\\components\\vendor\\questions\\VendorReplyForm.jsx",
+                      "type": "file",
+                      "extension": ".jsx",
+                      "size": 1915,
+                      "modified": "2025-07-14T21:20:19.672Z"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "src\\contexts",
+          "type": "directory",
+          "items": [
+            {
+              "name": "AuthContext.jsx",
+              "path": "src\\contexts\\AuthContext.jsx",
+              "type": "file",
+              "extension": ".jsx",
+              "size": 1613,
+              "modified": "2025-07-14T20:37:48.416Z"
+            },
+            {
+              "name": "ProductViewerContext.jsx",
+              "path": "src\\contexts\\ProductViewerContext.jsx",
+              "type": "file",
+              "extension": ".jsx",
+              "size": 27721,
+              "modified": "2025-07-14T20:45:00.684Z"
+            },
+            {
+              "name": "SearchContext.jsx",
+              "path": "src\\contexts\\SearchContext.jsx",
+              "type": "file",
+              "extension": ".jsx",
+              "size": 16798,
+              "modified": "2025-07-14T20:41:59.567Z"
+            }
+          ]
+        },
+        {
+          "path": "src\\hooks",
+          "type": "directory",
+          "items": [
+            {
+              "name": "useComments.js",
+              "path": "src\\hooks\\useComments.js",
+              "type": "file",
+              "extension": ".js",
+              "size": 7072,
+              "modified": "2025-07-14T21:01:07.191Z"
+            },
+            {
+              "name": "useFavorites.js",
+              "path": "src\\hooks\\useFavorites.js",
+              "type": "file",
+              "extension": ".js",
+              "size": 3639,
+              "modified": "2025-07-14T21:14:31.056Z"
+            },
+            {
+              "name": "useVendorNotifications.js",
+              "path": "src\\hooks\\useVendorNotifications.js",
+              "type": "file",
+              "extension": ".js",
+              "size": 2419,
+              "modified": "2025-07-14T20:48:51.025Z"
+            }
+          ]
+        },
+        {
+          "name": "index.css",
+          "path": "src\\index.css",
+          "type": "file",
+          "extension": ".css",
+          "size": 194,
+          "modified": "2025-07-14T20:37:02.963Z"
+        },
+        {
+          "name": "main.jsx",
+          "path": "src\\main.jsx",
+          "type": "file",
+          "extension": ".jsx",
+          "size": 537,
+          "modified": "2025-07-14T20:39:58.297Z"
+        },
+        {
+          "path": "src\\newProductFormComponent",
+          "type": "directory",
+          "items": [
+            {
+              "name": "ProductCardEditor.jsx",
+              "path": "src\\newProductFormComponent\\ProductCardEditor.jsx",
+              "type": "file",
+              "extension": ".jsx",
+              "size": 11501,
+              "modified": "2025-07-14T21:08:26.143Z"
+            },
+            {
+              "name": "ProductFormComponent.jsx",
+              "path": "src\\newProductFormComponent\\ProductFormComponent.jsx",
+              "type": "file",
+              "extension": ".jsx",
+              "size": 7500,
+              "modified": "2025-07-14T21:09:17.667Z"
+            }
+          ]
+        },
+        {
+          "path": "src\\pages",
+          "type": "directory",
+          "items": [
+            {
+              "path": "src\\pages\\auth",
+              "type": "directory",
+              "items": [
+                {
+                  "name": "LoginPage.jsx",
+                  "path": "src\\pages\\auth\\LoginPage.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 2071,
+                  "modified": "2025-07-14T20:50:45.891Z"
+                }
+              ]
+            },
+            {
+              "path": "src\\pages\\favorites",
+              "type": "directory",
+              "items": [
+                {
+                  "name": "FavoritesPage.jsx",
+                  "path": "src\\pages\\favorites\\FavoritesPage.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 6922,
+                  "modified": "2025-07-14T21:14:22.705Z"
+                }
+              ]
+            },
+            {
+              "path": "src\\pages\\profile",
+              "type": "directory",
+              "items": [
+                {
+                  "name": "ProfilePage.jsx",
+                  "path": "src\\pages\\profile\\ProfilePage.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 8185,
+                  "modified": "2025-07-14T20:51:54.435Z"
+                }
+              ]
+            },
+            {
+              "path": "src\\pages\\vendor",
+              "type": "directory",
+              "items": [
+                {
+                  "name": "EditProductPage.jsx",
+                  "path": "src\\pages\\vendor\\EditProductPage.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 5989,
+                  "modified": "2025-07-14T21:41:14.629Z"
+                },
+                {
+                  "name": "QuestionsPage.jsx",
+                  "path": "src\\pages\\vendor\\QuestionsPage.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 6643,
+                  "modified": "2025-07-14T21:15:24.556Z"
+                },
+                {
+                  "name": "VendorProductDetails.jsx",
+                  "path": "src\\pages\\vendor\\VendorProductDetails.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 11543,
+                  "modified": "2025-07-14T21:07:34.151Z"
+                },
+                {
+                  "name": "VendorProductsPage.jsx",
+                  "path": "src\\pages\\vendor\\VendorProductsPage.jsx",
+                  "type": "file",
+                  "extension": ".jsx",
+                  "size": 10581,
+                  "modified": "2025-07-14T21:06:35.493Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "src\\services",
+          "type": "directory",
+          "items": [
+            {
+              "path": "src\\services\\api",
+              "type": "directory",
+              "items": [
+                {
+                  "name": "analytics.js",
+                  "path": "src\\services\\api\\analytics.js",
+                  "type": "file",
+                  "extension": ".js",
+                  "size": 1702,
+                  "modified": "2025-07-14T21:44:56.769Z"
+                },
+                {
+                  "name": "auth.js",
+                  "path": "src\\services\\api\\auth.js",
+                  "type": "file",
+                  "extension": ".js",
+                  "size": 1572,
+                  "modified": "2025-07-14T20:39:08.954Z"
+                },
+                {
+                  "name": "comments.js",
+                  "path": "src\\services\\api\\comments.js",
+                  "type": "file",
+                  "extension": ".js",
+                  "size": 2490,
+                  "modified": "2025-07-14T21:01:21.878Z"
+                },
+                {
+                  "name": "favorites.js",
+                  "path": "src\\services\\api\\favorites.js",
+                  "type": "file",
+                  "extension": ".js",
+                  "size": 1569,
+                  "modified": "2025-07-14T20:45:26.586Z"
+                },
+                {
+                  "name": "fullProducts.js",
+                  "path": "src\\services\\api\\fullProducts.js",
+                  "type": "file",
+                  "extension": ".js",
+                  "size": 4291,
+                  "modified": "2025-07-14T21:13:34.680Z"
+                },
+                {
+                  "name": "search.js",
+                  "path": "src\\services\\api\\search.js",
+                  "type": "file",
+                  "extension": ".js",
+                  "size": 2563,
+                  "modified": "2025-07-14T20:42:08.708Z"
+                },
+                {
+                  "name": "vendor.js",
+                  "path": "src\\services\\api\\vendor.js",
+                  "type": "file",
+                  "extension": ".js",
+                  "size": 3548,
+                  "modified": "2025-07-14T21:06:46.212Z"
+                },
+                {
+                  "name": "vendorQuestions.js",
+                  "path": "src\\services\\api\\vendorQuestions.js",
+                  "type": "file",
+                  "extension": ".js",
+                  "size": 1964,
+                  "modified": "2025-07-14T20:49:08.703Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "src\\utils",
+          "type": "directory",
+          "items": [
+            {
+              "name": "formatters.js",
+              "path": "src\\utils\\formatters.js",
+              "type": "file",
+              "extension": ".js",
+              "size": 3564,
+              "modified": "2025-07-14T20:59:10.085Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tailwind.config.js",
+      "path": "tailwind.config.js",
+      "type": "file",
+      "extension": ".js",
+      "size": 566,
+      "modified": "2025-01-08T11:33:15.560Z"
+    },
+    {
+      "name": "vite.config.js",
+      "path": "vite.config.js",
+      "type": "file",
+      "extension": ".js",
+      "size": 978,
+      "modified": "2025-01-15T19:14:53.095Z"
+    }
+  ]
+}

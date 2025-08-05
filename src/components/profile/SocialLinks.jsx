@@ -1,3 +1,4 @@
+/* needed */
 import React from 'react';
 
 const SocialLinks = ({ social }) => (

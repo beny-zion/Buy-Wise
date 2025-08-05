@@ -1,9 +1,13 @@
+/* needed */
+
+// components/home/navigation/ProfileCircle.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../contexts/AuthContext';
 import { User } from 'lucide-react';
+import NotificationBadge from '../../notifications/NotificationBadge';
 
-const ProfileCircle = () => {
+const ProfileCircle = ({ isNavbar = false }) => {
   const { user } = useAuth();
   const navigate = useNavigate();
   const [showTooltip, setShowTooltip] = useState(false);
@@ -16,6 +20,45 @@ const ProfileCircle = () => {
     }
   };
 
+  // אם זה בנב בר, החזר רק את התוכן ללא positioning
+  if (isNavbar) {
+    return (
+      <div className="relative w-full h-full">
+        <button
+          onMouseEnter={() => setShowTooltip(true)}
+          onMouseLeave={() => setShowTooltip(false)}
+          onClick={handleClick}
+          className="w-full h-full rounded-full flex items-center justify-center overflow-hidden
+                     hover:scale-105 transition-transform duration-200"
+        >
+          {user?.profileImage ? (
+            <img 
+              src={user.profileImage} 
+              alt="פרופיל"
+              className="w-full h-full object-cover" 
+            />
+          ) : (
+            <User className="w-5 h-5 text-gray-600" />
+          )}
+        </button>
+        
+        {/* הוספת התראות למוכרים - עכשיו מחוץ לכפתור */}
+        {user?.isVendor && (
+          <div className="absolute -top-0.5 -right-0.5 z-10">
+            <NotificationBadge />
+          </div>
+        )}
+        
+        {showTooltip && (
+          <div className="absolute top-full right-0 mt-2 bg-gray-900 text-white text-xs py-1 px-2 rounded whitespace-nowrap z-50">
+            {user ? 'אזור אישי' : 'התחברות'}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // הגרסה המקורית לפינה התחתונה
   return (
     <div className="fixed bottom-6 left-6 z-50">
       <button
@@ -34,6 +77,9 @@ const ProfileCircle = () => {
         ) : (
           <User className="w-6 h-6 text-gray-600" />
         )}
+        
+        {/* הוספת התראות למוכרים */}
+        {user?.isVendor && <NotificationBadge />}
       </button>
       
       {showTooltip && (

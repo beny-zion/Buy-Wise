@@ -1,45 +1,26 @@
+/* needed */
 // src/services/api/auth.js
 import axios from 'axios';
 
-const API_URL = 'https://product-pick-server.onrender.com';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3333';
 
 const axiosInstance = axios.create({
   baseURL: API_URL,
   withCredentials: true,
-  
 });
-
-export const login = async (credentials) => {
-  try {
-    return await axiosInstance.post('/user/login', credentials);
-  } catch (error) {
-    throw handleError(error);
-  }
-};
-
-export const register = async (userData) => {
-  console.log("ddd",userData)
-  try {
-    
-    return await axiosInstance.post('/user/register', userData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    });
-  } catch (error) {
-    console.log("error",error)
-
-    throw handleError(error);
-  }
-};
 
 export const updateProfile = async (userData) => {
   try {
-    return await axiosInstance.put('/user/profile', userData);
+    // וודא שאתה שולח את הבקשה עם הכותרת הנכונה כשמדובר בקבצים
+    return await axiosInstance.put('/user/profile', userData, {
+      headers: {
+        'Content-Type': 'multipart/form-data' // חשוב במיוחד עבור העלאת תמונות
+      }
+    });
   } catch (error) {
     throw handleError(error);
   }
- };
+};
 
 export const logout = async () => {
   try {
@@ -51,11 +32,7 @@ export const logout = async () => {
 
 export const getCurrentUser = async () => {
   try {
-   
-
-    const response = await axiosInstance.get('/user/current', {
-     
-    });
+    const response = await axiosInstance.get('/user/current');
     return response;
   } catch (error) {
     throw handleError(error);
