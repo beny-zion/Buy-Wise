@@ -3,7 +3,7 @@ import React from 'react';
 
 const GoogleAuthButton = () => {
   // 🌍 שימוש ב-Environment Variables
-  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3333';
+  const apiUrl = import.meta.env.VITE_API_URL || 'product-pick-server.onrender.com';
   
   const handleGoogleAuth = () => {
     window.location.href = `${apiUrl}/user/google`;
