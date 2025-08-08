@@ -9,7 +9,9 @@ import { createFullProduct } from '../services/api/fullProducts';
 import { useAuth } from '../contexts/AuthContext';
 import { useProductViewer } from '../contexts/ProductViewerContext'; // הוספת ייבוא חדש
 
-const API_URL = "http://localhost:3333/api/aliexpress/products/validate";
+// const API_URL = "http://localhost:3333/api/aliexpress/products/validate";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/aliexpress/products/validate`;
+
 
 const ProductForm = () => {
   const navigate = useNavigate();
