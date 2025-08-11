@@ -446,7 +446,7 @@ const ProductCardEditor = ({ productData, onSave, user }) => {
                 <h3 className="text-lg font-semibold text-gray-800">תצוגה מקדימה</h3>
               </div>
               
-              {/* כרטיס מוצר מעודכן */}
+              {/* כרטיס מוצר מעודכן - ללא מחיר */}
               <div className="max-w-sm mx-auto bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-200">
                 {/* תמונת מוצר */}
                 <div className="relative aspect-[4/3]">
@@ -471,27 +471,26 @@ const ProductCardEditor = ({ productData, onSave, user }) => {
                     </div>
                   </div>
 
-                  {/* 🔧 המלצה במקום כותרת */}
+                  {/* המלצה במקום כותרת */}
                   <p className="font-medium text-gray-900 text-base leading-tight line-clamp-3 min-h-[60px]">
                     {truncateText(previewData.recommendation || 'ההמלצה שלך תופיע כאן...', 80)}
                   </p>
 
-                  {/* דירוג ומחיר */}
+                  {/* דירוג בלבד - ללא מחיר */}
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex items-center gap-1">
                       <Star className="w-4 h-4 text-yellow-400 fill-current" />
                       <span className="text-gray-600">4.8</span>
                     </div>
-                    <div>
-                      {/* 🔧 מחיר באנגלית */}
+                    {/* // 🔧 מחיר הוסר זמנית מהתצוגה המקדימה */}
+                    {/* <div>
                       <div className="font-semibold text-green-600">
                         {formatPrice(productData.price?.current || 19.99)}
                       </div>
-                      {/* 🔧 הערת מחיר משוער */}
                       <div className="text-xs text-gray-500">
                         מחיר משוער
                       </div>
-                    </div>
+                    </div> */}
                   </div>
 
                   {/* כפתור רכישה */}
