@@ -278,21 +278,14 @@ const ProductDetailsModal = ({ product, onClose, onBuyClick, onShareClick, produ
                                             {/* מחיר וסטטיסטיקות */}
                                             <div className="flex justify-between items-start">
                                                 <div className="space-y-2">
+                                                    {/* 🔧 מחיר באנגלית */}
                                                     <div className="text-3xl font-bold bg-gradient-to-r from-[#FFA066] to-[#FF6B6B] bg-clip-text text-transparent">
                                                         {formatPrice(product?.aliExpressData?.price || 0)}
                                                     </div>
-                                                    {product?.aliExpressData?.originalPrice && (
-                                                        <div className="flex items-center gap-3">
-                                                            <span className="text-lg text-gray-500 line-through">
-                                                                {formatPrice(product?.aliExpressData?.originalPrice)}
-                                                            </span>
-                                                            {product?.aliExpressData?.discount && (
-                                                                <span className="text-sm font-bold bg-gradient-to-r from-red-500 to-pink-500 text-white px-3 py-1 rounded-full">
-                                                                    {product.aliExpressData.discount}
-                                                                </span>
-                                                            )}
-                                                        </div>
-                                                    )}
+                                                    {/* 🔧 הערת מחיר משוער */}
+                                                    <div className="text-xs text-gray-500">
+                                                        מחיר משוער - המחיר הסופי נקבע באתר אליאקספרס
+                                                    </div>
                                                 </div>
 
                                                 <div className="text-left space-y-2">

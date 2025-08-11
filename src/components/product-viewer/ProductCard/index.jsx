@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Heart, ShoppingCart, ExternalLink } from 'lucide-react';
 import { useProductViewer } from '../../../contexts/ProductViewerContext';
-import { formatPrice } from '../../../utils/formatters';
+import { formatPrice, truncateText } from '../../../utils/formatters';
 
 /**
  * רכיב כרטיס מוצר לתצוגת גריד
@@ -75,33 +75,38 @@ const ProductCard = ({ product, onClick }) => {
             }`}
           />
         </button>
-
-        {/* תג הנחה */}
-        {product.aliExpressData?.discount && (
-          <div className="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
-            {product.aliExpressData.discount}
-          </div>
-        )}
       </div>
 
       {/* פרטי מוצר */}
       <div className="p-4">
-        {/* כותרת */}
-        <h3 className="font-medium text-gray-900 mb-2 line-clamp-2 min-h-[48px]">
-          {product.title}
-        </h3>
+        {/* פרטי ממליץ */}
+        <div className="flex items-center gap-2 mb-3">
+          <img
+            src={product.vendorId?.profileImage || '/default-avatar.png'}
+            alt={product.vendorId?.fullName || 'ממליץ'}
+            className="w-6 h-6 rounded-full"
+          />
+          <span className="text-sm text-gray-600">
+            {product.vendorId?.fullName || 'ממליץ'}
+          </span>
+        </div>
+
+        {/* 🔧 המלצה במקום כותרת - מוגבלת ל-80 תווים */}
+        <p className="font-medium text-gray-900 mb-3 line-clamp-3 min-h-[60px] leading-tight">
+          {truncateText(product.recommendation || 'אין המלצה', 80)}
+        </p>
 
         {/* מחיר ודירוג */}
         <div className="flex items-center justify-between mb-3">
           <div>
-            <div className="text-xl font-bold text-gray-900">
-              {formatPrice(product.aliExpressData?.price || 0)}
-            </div>
-            {product.aliExpressData?.originalPrice && (
-              <div className="text-sm text-gray-500 line-through">
-                {formatPrice(product.aliExpressData.originalPrice)}
-              </div>
-            )}
+            {/* 🔧 מחיר באנגלית */}
+            {/* <div className="text-xl font-bold text-gray-900"> */}
+              {/* {formatPrice(product.aliExpressData?.price || 0)} */}
+            {/* </div> */}
+            {/* 🔧 הערת מחיר משוער */}
+            {/* <div className="text-xs text-gray-500 mt-1"> */}
+              {/* מחיר משוער */}
+            {/* </div> */}
           </div>
 
           {product.aliExpressData?.stats?.rating && (
@@ -112,18 +117,6 @@ const ProductCard = ({ product, onClick }) => {
               </span>
             </div>
           )}
-        </div>
-
-        {/* פרטי ממליץ */}
-        <div className="flex items-center gap-2 mb-3 pb-3 border-b border-gray-100">
-          <img
-            src={product.vendorId?.profileImage || '/default-avatar.png'}
-            alt={product.vendorId?.fullName || 'ממליץ'}
-            className="w-6 h-6 rounded-full"
-          />
-          <span className="text-sm text-gray-600">
-            המלצה של {product.vendorId?.fullName || 'ממליץ'}
-          </span>
         </div>
 
         {/* כפתורי פעולה */}
@@ -155,4 +148,3 @@ const ProductCard = ({ product, onClick }) => {
 };
 
 export default ProductCard;
-
