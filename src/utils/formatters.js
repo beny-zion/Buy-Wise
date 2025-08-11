@@ -2,11 +2,29 @@
 // components/ProductViewer/utils/formatters.js
 
 /**
- * פורמט מחיר לתצוגה בשקלים
- * @param {number} price - המחיר לפורמט
- * @returns {string} מחרוזת מחיר מפורמטת
+ * פורמט מחיר לתצוגה באנגלית בדולרים
+ * @param {number} price - המחיר לפורמט (במטבע המקורי CNY)
+ * @returns {string} מחרוזת מחיר מפורמטת באנגלית
  */
 export const formatPrice = (price) => {
+    if (price === null || price === undefined) return '';
+    
+    // המרה גסה מ-CNY לדולרים (שער של בערך 0.14)
+    const priceInUSD = price * 0.14;
+    
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 2
+    }).format(priceInUSD);
+  };
+
+/**
+ * פורמט מחיר לתצוגה בשקלים (לשימוש פנימי אם נדרש)
+ * @param {number} price - המחיר לפורמט
+ * @returns {string} מחרוזת מחיר מפורמטת בשקלים
+ */
+export const formatPriceILS = (price) => {
     if (price === null || price === undefined) return '';
     
     return new Intl.NumberFormat('he-IL', {
@@ -14,6 +32,20 @@ export const formatPrice = (price) => {
       currency: 'ILS',
       maximumFractionDigits: 0
     }).format(price);
+  };
+
+/**
+ * יוצר אלמנט המחיר עם הערת מחיר משוער
+ * @param {number} price - המחיר לפורמט
+ * @param {string} className - מחלקות CSS נוספות
+ * @returns {object} אובייקט עם המחיר והטקסט המשלים
+ */
+export const createPriceDisplay = (price, className = '') => {
+    return {
+      price: formatPrice(price),
+      disclaimer: "מחיר משוער - המחיר הסופי נקבע באתר אליאקספרס",
+      fullClassName: `${className}`
+    };
   };
   
   /**
@@ -43,18 +75,6 @@ export const formatPrice = (price) => {
     
     return new Intl.NumberFormat('he-IL').format(num);
   };
-  
-  // /**
-  //  * קיצור טקסט ארוך
-  //  * @param {string} text - הטקסט לקיצור
-  //  * @param {number} maxLength - האורך המקסימלי
-  //  * @returns {string} טקסט מקוצר עם ... בסוף אם נדרש
-  //  */
-  // export const truncateText = (text, maxLength) => {
-  //   if (!text || text.length <= maxLength) return text;
-    
-  //   return text.slice(0, maxLength) + '...';
-  // };
 
   /**
    * קיצור טקסט ארוך

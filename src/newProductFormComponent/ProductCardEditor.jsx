@@ -6,6 +6,7 @@ import {
   Save, Image as ImageIcon, Type, Heart, Star, ShoppingCart,
   AlertCircle
 } from 'lucide-react';
+import { formatPrice, truncateText } from '../utils/formatters';
 
 const MediaGallery = ({ media, activeMedia, onMediaChange, onCustomUpload }) => (
   <div className="absolute bottom-4 left-4 right-4">
@@ -445,7 +446,7 @@ const ProductCardEditor = ({ productData, onSave, user }) => {
                 <h3 className="text-lg font-semibold text-gray-800">תצוגה מקדימה</h3>
               </div>
               
-              {/* כרטיס מוצר */}
+              {/* כרטיס מוצר מעודכן */}
               <div className="max-w-sm mx-auto bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-200">
                 {/* תמונת מוצר */}
                 <div className="relative aspect-[4/3]">
@@ -470,14 +471,9 @@ const ProductCardEditor = ({ productData, onSave, user }) => {
                     </div>
                   </div>
 
-                  {/* כותרת */}
-                  <h3 className="font-semibold text-gray-900 text-base leading-tight line-clamp-2">
-                    {previewData.title}
-                  </h3>
-                  
-                  {/* המלצה */}
-                  <p className="text-gray-700 text-sm leading-relaxed line-clamp-3">
-                    {previewData.recommendation}
+                  {/* 🔧 המלצה במקום כותרת */}
+                  <p className="font-medium text-gray-900 text-base leading-tight line-clamp-3 min-h-[60px]">
+                    {truncateText(previewData.recommendation || 'ההמלצה שלך תופיע כאן...', 80)}
                   </p>
 
                   {/* דירוג ומחיר */}
@@ -486,8 +482,15 @@ const ProductCardEditor = ({ productData, onSave, user }) => {
                       <Star className="w-4 h-4 text-yellow-400 fill-current" />
                       <span className="text-gray-600">4.8</span>
                     </div>
-                    <div className="font-semibold text-green-600">
-                      ${productData.price?.current || '19.99'}
+                    <div>
+                      {/* 🔧 מחיר באנגלית */}
+                      <div className="font-semibold text-green-600">
+                        {formatPrice(productData.price?.current || 19.99)}
+                      </div>
+                      {/* 🔧 הערת מחיר משוער */}
+                      <div className="text-xs text-gray-500">
+                        מחיר משוער
+                      </div>
                     </div>
                   </div>
 
