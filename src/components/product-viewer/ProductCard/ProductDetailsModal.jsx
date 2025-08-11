@@ -275,18 +275,17 @@ const ProductDetailsModal = ({ product, onClose, onBuyClick, onShareClick, produ
                                                 {product?.title || 'פרטי מוצר'}
                                             </h2>
                                             
-                                            {/* מחיר וסטטיסטיקות */}
-                                            <div className="flex justify-between items-start">
-                                                <div className="space-y-2">
-                                                    {/* 🔧 מחיר באנגלית */}
+                                            {/* סטטיסטיקות ללא מחיר */}
+                                            <div className="flex justify-end items-start">
+                                                {/* // 🔧 מחיר הוסר זמנית */}
+                                                {/* <div className="space-y-2">
                                                     <div className="text-3xl font-bold bg-gradient-to-r from-[#FFA066] to-[#FF6B6B] bg-clip-text text-transparent">
                                                         {formatPrice(product?.aliExpressData?.price || 0)}
                                                     </div>
-                                                    {/* 🔧 הערת מחיר משוער */}
                                                     <div className="text-xs text-gray-500">
                                                         מחיר משוער - המחיר הסופי נקבע באתר אליאקספרס
                                                     </div>
-                                                </div>
+                                                </div> */}
 
                                                 <div className="text-left space-y-2">
                                                     {product?.aliExpressData?.stats?.rating && (
